@@ -12,7 +12,7 @@
     </head>
     <body>
         <h1>Edit Content:</h1>
-        <form action="${pageContext.request.contextPath}" method="post">
+        <form action="${pageContext.request.contextPath}/edit/save" method="post">
             <div>
                 <label>First Name</label>
                 <input type="text" class="form-control" placeholder="enter your first name..." name="firstName" required="required" value="${user.firstName}"/>
@@ -28,10 +28,6 @@
             <div>
                 <label>Email</label>
                 <input type="text" class="form-control" placeholder="enter your email..." name="email" value="${user.email}" required="required"/>
-            </div>
-            <div>
-                <label>Password</label>
-                <input type="password" class="form-control" placeholder="enter your password" name="password" value="${user.password}" required="required"/>
             </div>
             <div>
                 <button type="submit" class="btn btn-success">Submit</button>

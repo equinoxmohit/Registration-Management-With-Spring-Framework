@@ -23,4 +23,7 @@ public interface UserDAO {
 
     User login(String username, String password) throws SQLException, ClassNotFoundException;
 
+    int update(User u) throws SQLException, ClassNotFoundException;
+
+    int delete(int id) throws SQLException, ClassNotFoundException;
 }

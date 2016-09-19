@@ -85,4 +85,23 @@ public class UserDAOImpl implements UserDAO {
         }
         return null;
     }
+
+    @Override
+    public int delete(int id) throws SQLException, ClassNotFoundException {
+        String sql = "DELETE FROM tbl_registration WHERE registration_id=?";
+        return jdbcTemplate.update(sql, new Object[]{id});
+    }
+
+    @Override
+    public int update(User u) throws SQLException, ClassNotFoundException {
+        String sql = "UPDATE tbl_registration SET first_name=?,last_name=?,username=?,email=?,password=? WHERE id=?";
+        return jdbcTemplate.update(sql, new Object[]{
+            u.getFirstName(),
+            u.getLastName(),
+            u.getUsername(),
+            u.getEmail(),
+            u.getPassword(),
+            u.getId()
+        });
+    }
 }
